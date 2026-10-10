@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage[includeheadfoot, top=1.0in, bottom=1.0in, hmargin=1.0in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{url}
+\pagestyle{fancy}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage{amsmath,amsfonts}
+
+\lhead{Astronomy Lab II}
+\rhead{Spring 2023}
+\lfoot{Golant \& Mead}
+\rfoot{Tue 7-10pm}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+\huge{Lab 1: Orders of Magnitude}\\ \medskip \Large{\textcolor{red}{Lecture Notes}} \\ \Large{January 24, 2023}
+\end{center}
+
+\section{Scientific Notation}
+When writing big numbers -- like 340,000,000 -- or small numbers -- like 0.000034 -- writing out all the zeros can be cumbersome. Scientific notation ameliorates this issue by representing numbers in terms of \textbf{powers of ten}. If we wish to write 100,000 (or 1 followed by 5 zeros) in a more compact way, we can do so by writing $10^5$ -- in words, we'd pronounce this as ``10 to the power of 5,'' or ``10 to the fifth power.'' So, we could write 340,000,000 in scientific notation as $3.4 \times 10^8$ -- multiplication by ``10 to the eighth power'' shifts the decimal point in $3.4$ to the \emph{right} by 8 places. Similarly, we can use a \emph{negative} power of ten to shift the decimal place to the \emph{left}: $0.000034$ can be written as $3.4 \times 10^{-5}$, or ``3.4 times 10 to the negative fifth power.'' When a number is written in scientific notation, we often refer to the leading number (e.g., 3.4 in the examples above) as the \textbf{coefficient} and the power of ten as the \textbf{order of magnitude}. For instance, $4.5 \times 10^{11}$ has a coefficient of 4.5 and an order of magnitude of 11; this number is 3 orders of magnitude \emph{greater} than $3.7 \times 10^8$, and 5 orders of magnitude \emph{less} than $1.11 \times 10^{16}$.
+
+\bigskip
+
+To apply our understanding of powers of ten, let's try a few short practice problems. \textbf{Record your solutions to these problems in your lab write-up} -- remember to always show your work and justify your answer!
+\begin{enumerate}
+    \item The mass of the Earth is $5.97 \times 10^{24} \, {\rm kg}$ (kg = kilograms). What is the order of magnitude of this number? The mass of the Milky Way is about $6 \times 10^{42} \, {\rm kg}$ -- by how many orders of magnitude is the mass of the Milky Way greater than the mass of the Earth? How many times do we need to multiply the mass of the Earth by 10 in order to reach the order of magnitude of the mass of the Milky Way? Why should we be thankful for scientific notation when writing out these big numbers?
+    
+    \item The average radius of a hydrogen atom is about $5.3 \times 10^{-11} \, {\rm m}$ (m = meters); the average radius of a lithium atom is about $1.1 \times 10^{-10} \, {\rm m}$. Which atom is larger? What is the order of magnitude difference between the size of a hydrogen atom and the size of a lithium atom? 
+    
+    \item The age of the Sun is $4.6 \times 10^9 \, {\rm yr}$ (yr = years); the age of the next closest star to us, Proxima Centauri, is $485 \times 10^{7} \, {\rm yr}$. Which star is older? 
+\end{enumerate}
+
+\bigskip
+
+Problem 3 may have confused you a bit -- this is because the age of Proxima Centauri was written \emph{incorrectly} in scientific notation. When you write a number in scientific notation, the coefficient should always have only \emph{one} digit to the left of the decimal point; this standardizes the definition of ``order of magnitude'' and makes it easier to compare measurements expressed in scientific notation. If we can only have one digit to the left of the decimal point, how many digits can we have to the \emph{right} of the decimal point? This is specified by the number of \textbf{significant figures} (or ``sig figs,'' if you're in a hurry). 
+
+If we want to write a number with three significant figures, then we should have one digit to the left of the decimal and two to the right (for a total of three digits). Similarly, a number with only one significant figure will have only one digit to the left of the decimal and \emph{nothing} after the decimal. $3.4578 \times 10^9$ has five sig figs, while $3.5 \times 10^9$ has two sig figs and $3 \times 10^9$ only has one sig fig. It's important to keep significant figures in mind when reporting measurements, since your measuring tool may not be precise enough to justify many sig figs -- for example, if your ruler only has markings at each centimeter, it would be more proper to cite a measurement of 3.5 cm than to cite a measurement of 3.48825 cm (the ruler is definitely not precise enough to give you a measurement to six significant figures). Usually, keeping two or three significant figures is enough (and often more correct).
+
+\bigskip
+
+Let's try some problems involving scientific notation and significant figures.
+\begin{enumerate}
+    \item The age of the Universe is thought to be around $13787 \times 10^{6}$ years. How many significant figures does this measurement have? Write this number in proper scientific notation using \emph{three} significant figures. Write the number again in scientific notation using \emph{two} significant figures. (hint: when reducing the number of sig figs, you'll need to \emph{round} the original measurement to the appropriate number of decimal places) 
+    
+    \item The speed of light in empty space is 299,792,458 m/s (m/s = meters per second). Write this measurement in scientific notation to \emph{three} significant figures (hint: zeros count as significant figures!). What is the order of magnitude of this number?
+    
+    \item The ratio of the mass of the Earth to the mass of Jupiter is 0.003146. Write this number in scientific notation to \emph{four} significant figures. How many orders of magnitude smaller than the mass of Jupiter is the mass of the Earth?
+    
+    \item Your friend is writing a scientific paper about her cat. In her manuscript, she reports her cat's mass to be 4.536782 kg. Why might you be skeptical of this measurement? What additional information (e.g., about the equipment used to make this measurement) could your friend include in her paper that would make this number more believable? Write the cat's mass using three significant figures.
+\end{enumerate}
+
+\bigskip
+
+\subsection{Arithmetic with scientific notation}
+Scientific notation gives us a convenient means of compactly writing big numbers and small numbers. By comparing orders of magnitude, scientific notation also gives us a quick and easy way of determining how big (or how small) one measurement is compared to another. In a similar vein, scientific notation can simplify arithmetic, especially when doing calculations involving numbers with differing orders of magnitude. Here are some quick rules about arithmetic with scientific notation:
+\begin{itemize}
+    \item When \textbf{multiplying} two numbers in scientific notation, we \emph{multiply} the coefficients but \emph{add} the orders of magnitude. For example:
+    \begin{equation}
+        (3.4 \times 10^9) \times (5.8 \times 10^4) = (3.4 \times 5.8) \times 10^{9 + 4} = 19.72 \times 10^{13} = 1.972 \times 10^{14} = \boxed{2.0 \times 10^{14}}. 
+    \end{equation}
+    Note that the product $19.72 \times 10^{13}$ was not in proper scientific notation, so I had to slightly adjust my answer. I also rounded my final answer to two significant figures -- usually, when multiplying or dividing numbers in scientific notation, it's proper to write your final answer using the \emph{least} number of sig figs that appear in the original numbers (in this case, $3.4 \times 10^9$ and $5.8 \times 10^4$ each had two sig figs, so the least number of sig figs appearing in the original numbers was two. If, instead, we had started with $3 \times 10^9$ and $5.8 \times 10^4$, our final answer should have had only \emph{one} sig fig).
+    
+    \item When \textbf{dividing} two numbers in scientific notation, we \emph{divide} the coefficients but \emph{subtract} the orders of magnitude. For example:
+    \begin{equation}
+        \frac{3.4 \times 10^9}{5.8 \times 10^4} = \frac{3.4}{5.8} \times 10^{9-4} = 0.586 \times 10^5 = 5.86 \times 10^4 = \boxed{5.9 \times 10^4}.
+    \end{equation}
+    Again, I had to adjust my final answer to be in proper scientific notation, and I rounded to two significant figures to match the least number of sig figs appearing in the original numbers.
+    
+    \item When \textbf{adding} or \textbf{subtracting} two numbers in scientific notation, we simply add/subtract the coefficients. \textbf{However}, we can only add or subtract these numbers if they're multiplied by the same power of 10 -- otherwise, we need to adjust the powers of 10 to match. For example:
+    \begin{equation}
+        (3.4 \times 10^9) + (4.2 \times 10^8) = (3.4 \times 10^9) + (0.42 \times 10^9) = 3.82 \times 10^9 = \boxed{3.8 \times 10^9}.
+    \end{equation}
+    Note how I had to rewrite $4.2 \times 10^8$ as $0.42 \times 10^9$ to get the power of 10 to match with $3.4 \times 10^9$ -- only then could I properly add the two numbers. I also rounded the final answer to include only \emph{one} digit to the right of the decimal point -- when adding or subtracting numbers in scientific notation, it's usually proper to write your final answer using the \emph{least} number of decimal digits that appear in the original number (in this case, $3.4 \times 10^9$ and $4.2 \times 10^8$ each only had one digit to the right of the decimal, so our final answer also had only one digit to the right of the decimal. If we had instead started with $3.42 \times 10^9$ and $4.23 \times 10^8$, our final answer should have had \emph{two} digits to the right of the decimal).    
+\end{itemize}
+
+The sig fig rules ensure that our final answer is only as precise as our \emph{least} precise measurement. If you forget these rules, it's usually fine to just keep your final answer to one or two sig figs -- it's better to have too few significant figures (i.e., less precision) than too many. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%% UNITS %%%%%%%%%%%%%%%%%%%%%%%
+\section{Units}
+If someone tells you that the height of a tree is ``6,'' you might be a little confused -- is the height 6 feet? 6 meters? 6 inches? 6 light-years? Whenever you report a measurement, you \emph{must} cite the \textbf{units} -- class is not 3 long, it's 3 \emph{hours} long. Without units, a measurement is completely ambiguous. 
+
+In the physical sciences, we often use the ``International System'' of units, or the ``SI'' system. In the SI system, the typical unit of mass is the kilogram (kg), the typical unit of length is the meter (m), and the typical unit of time is the second (s). These units are fine in many cases, but may not always be the most convenient -- what if we instead wanted to measure time in years? Or distance in megaparsecs? Or mass in grams? In these cases, we must \textbf{convert} the units of our measurement, or perform a ``unit conversion.''
+
+A nice trick for converting units is to multiply the original value by a ``conversion factor'' that's equal to one. For instance, since 365 days is equivalent to 1 year, the conversion factor $\frac{1 \, {\rm year}}{365 \, {\rm days}}$ is equal to one. So, if we wanted to convert a measurement of 30 days to units of years, we would do
+\medskip
+\begin{equation}
+    30 \, {\rm days} = (30 \, {\rm days}) \times \left(\frac{1 \, {\rm year}}{365 \, {\rm days}}\right) = \frac{(30 \, {\rm days}) \times (1 \, {\rm year})}{365 \, {\rm days}} = \frac{30}{365} \, {\rm years} = \boxed{8.2 \times 10^{-2} \, {\rm years}}.
+\end{equation}
+\medskip
+Notice that, because ``days'' appears on both the top and the bottom of the fraction, that unit \emph{cancels out}, just like if we were dividing an ordinary number by itself. It's very important that you always set up your conversion factor such that this cancellation occurs. Here's another example, where we convert $3 \times 10^8$ meters per second (m/s, a unit of speed or \emph{velocity}) to meters per hour:
+\medskip
+\begin{align}
+    3 \times 10^8 \, {\rm m/s} = \left(\frac{3 \times 10^8 \, {\rm m}}{1 \, {\rm s}}\right) \times \left(\frac{3600 \, {\rm s}}{1 \, {\rm hr}}\right) = \frac{(3\times 10^8 \, {\rm m}) \times (3600 \, {\rm s})}{\rm (1 \, s) \times (1 \, hr)} &= \frac{3 \times 10^8 \times 3600}{\rm 1} \frac{\rm m}{\rm hr} \nonumber \\ &= \frac{1 \times 10^{12}}{1} \frac{\rm m}{\rm hr} = \boxed{1 \times 10^{12} \, {\rm m/hr}}. 
+\end{align}
+\medskip 
+Note how I wrote $3 \times 10^8 \, {\rm m/s}$ as a fraction, and then constructed the conversion factor $\frac{\rm 3600 \, s}{\rm 1 \, hr}$ such that the units of seconds (s) canceled out. When carrying out a unit conversion, I strongly recommend writing the units explicitly as fractions to help keep track of which units cancel and which units end up in your final answer. As a final example, let's convert 1.48 inches/year to feet/decade, which will require \emph{two} conversion factors -- here, I'll slash through the units that cancel out:
+\medskip
+\begin{equation}
+    1.48 \, {\rm inches/year} =  \frac{1.48 \, \cancel{\mathrm{inches}}}{1 \, \cancel{\mathrm{year}}} \times \frac{1 \, \mathrm{foot}}{12 \, \cancel{\mathrm{inches}}} \times \frac{10 \, \cancel{\mathrm{years}}}{1 \, \mathrm{decade}} = \frac{1.48 \times 10}{12} \frac{\rm feet}{\rm decade}= \boxed{1.23 \, {\rm feet/decade}}.
+\end{equation}
+\bigskip
+
+Unit conversion can be tricky when you first start out, but practice makes perfect! To get some practice with unit conversions, let's do some problems.
+\begin{enumerate}
+    \item Before going any further, go back to your solutions to the previous problems and make sure you've included the proper \textbf{units} in your answers (where appropriate). Remember, a measurement without the proper units is meaningless!
+    
+    \item The distance between us and the Andromeda Galaxy is $7.7 \times 10^5$ pc (pc = parsec). 1 parsec is equivalent to $3.09 \times 10^{13}$ kilometers. What is the distance to the Andromeda Galaxy in units of \emph{kilometers}? 1 parsec is also equivalent to $3.26 \, {\rm ly}$ (ly = light years). What is the distance to the Andromeda Galaxy in units of \emph{light years}? How many kilometers are in a light year? 
+    
+    \item The average distance between the Earth and the Sun is defined as the \emph{Astronomical Unit} (or AU), which is equivalent to $1.496 \times 10^8 \, {\rm km}$. The average distance between the Sun and Jupiter is around $5.2$ AU -- what is the Jupiter-Sun distance in \emph{kilometers}?   
+    
+    \item The average speed at which the Earth orbits the Sun is around 29.8 km/s. What is the Earth's orbital speed in km/yr? What is the Earth's orbital speed in AU/yr? (1 yr = $3.15 \times 10^7 \, {\rm s}$).
+    
+\end{enumerate}
+\bigskip
+
+
+\end{document}
